@@ -3,8 +3,8 @@ FROM gibdfrcu/base
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
 ENV ZOOKEEPER_VERSION 3.4.6
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64 \
-	ZK_HOME /opt/zookeeper-${ZOOKEEPER_VERSION}
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+ENV ZK_HOME /opt/zookeeper-${ZOOKEEPER_VERSION}
 
 RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz && \
 wget -q https://www.apache.org/dist/zookeeper/KEYS && \
