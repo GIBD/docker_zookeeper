@@ -2,8 +2,8 @@ FROM gibdfrcu/base:latest
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV ZOOKEEPER_VERSION="3.4.6" \
-	ZK_HOME="/opt/zookeeper-${ZOOKEEPER_VERSION}"
+ENV ZOOKEEPER_VERSION="3.4.6"
+ENV ZK_HOME="/opt/zookeeper-${ZOOKEEPER_VERSION}"
 
 COPY start-zk.sh /usr/bin
 
@@ -11,6 +11,7 @@ RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-${ZOOKEEPER_VER
 	wget -q https://www.apache.org/dist/zookeeper/KEYS && \
 	wget -q https://www.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz.asc && \
 	wget -q https://www.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz.md5
+
 
 RUN md5sum -c zookeeper-${ZOOKEEPER_VERSION}.tar.gz.md5 && \
 	gpg --import KEYS && \
