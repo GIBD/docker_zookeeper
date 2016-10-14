@@ -2,8 +2,8 @@ FROM gibdfrcu/base:latest
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV ZOOKEEPER_VERSION=3.4.6 \
-	ZK_HOME=/opt/zookeeper-${ZOOKEEPER_VERSION}
+ENV ZOOKEEPER_VERSION="3.4.6" \
+	ZK_HOME="/opt/zookeeper-${ZOOKEEPER_VERSION}""
 
 COPY start-zk.sh /usr/bin
 
