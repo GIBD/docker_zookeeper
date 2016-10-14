@@ -3,7 +3,6 @@ FROM gibdfrcu/base:latest
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
 ENV ZOOKEEPER_VERSION=3.4.6 \
-	JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 \
 	ZK_HOME=/opt/zookeeper-${ZOOKEEPER_VERSION}
 
 COPY start-zk.sh /usr/bin
