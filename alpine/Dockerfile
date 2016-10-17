@@ -27,4 +27,5 @@ WORKDIR $ZK_HOME
 
 VOLUME ["${ZK_HOME}/conf", "${ZK_HOME}/data"]
 
-ENTRYPOINT ["/usr/bin/start-zk.sh"]
+#ENTRYPOINT ["/usr/bin/start-zk.sh"]
+CMD /usr/bin/start-zk.sh
