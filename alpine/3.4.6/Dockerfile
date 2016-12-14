@@ -1,8 +1,8 @@
-FROM gibdfrcu/base:alpine
+FROM gibdfrcu/base:alpine_jdk1.8.112_py2.7.12
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV ZOOKEEPER_VERSION="3.4.9"
+ENV ZOOKEEPER_VERSION="3.4.6"
 ENV ZK_HOME="/opt/zookeeper-${ZOOKEEPER_VERSION}"
 
 COPY start-zk.sh /usr/bin
