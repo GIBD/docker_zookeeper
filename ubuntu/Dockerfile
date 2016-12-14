@@ -2,7 +2,7 @@ FROM gibdfrcu/base:alpine
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV ZOOKEEPER_VERSION="3.4.6"
+ENV ZOOKEEPER_VERSION="3.4.9"
 ENV ZK_HOME="/opt/zookeeper-${ZOOKEEPER_VERSION}"
 
 COPY start-zk.sh /usr/bin
