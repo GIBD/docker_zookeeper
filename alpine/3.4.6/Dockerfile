@@ -1,4 +1,4 @@
-FROM gibdfrcu/base:alpine_jdk1.8.112_py2.7.12
+FROM gibdbigdata/base:alpine_jdk1.8_py2.7
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
