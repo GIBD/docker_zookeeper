@@ -9,8 +9,11 @@ python:
   - 3.6
 
 install:
+  - docker build -t zookeeper ./alpine/3.4.9
+  - docker run -d -p 127.0.0.1:80:80 --name zookeeper zookeeper
 
 script:
+  - docker ps | grep -q zookeeper
 
 notifications:
   slack: frcubigdata:UHa7tsq87e6C0xd0C8es5CQO
