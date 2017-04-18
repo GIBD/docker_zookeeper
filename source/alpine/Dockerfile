@@ -1,8 +1,8 @@
-FROM gibdbigdata/base:alpine_jdk1.8_py2.7
+FROM gibdbigdata/base::CI_SO::CI_SO_VER:_jdk1.:CI_JAVA_MAJOR:_py:CI_PY_VER:
 
 MAINTAINER Ramiro Rivera <ramarivera@gmail.com>
 
-ENV ZOOKEEPER_VERSION="3.4.6"
+ENV ZOOKEEPER_VERSION=:CI_ZOOK_VER:
 ENV ZK_HOME="/opt/zookeeper-${ZOOKEEPER_VERSION}"
 
 COPY start-zk.sh /usr/bin

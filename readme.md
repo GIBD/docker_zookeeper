@@ -3,7 +3,7 @@
 This project contains necesary files for building an *Apache Zookeeper* Docker image.
 Said image is used by the GIBD (_Grupo de Investigacion en Base de Datos_) at UTN FRCU, Argentina.
 
-This image is based on Linux Alpine (**gibdfrcu/base:alpine_jdk1.8.112_py2.7.12**).
+This image is based on Linux Alpine (**gibdbigdata/base:alpine_jdk1.8_py2.7**).
 
 ## About Zookeeper
 

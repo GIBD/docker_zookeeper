@@ -1,19 +1,31 @@
 sudo: required
-
 services:
   - docker
 
 language: python
-
 python:
   - 3.6
 
 install:
-  - docker build -t zookeeper ./alpine/3.4.9
-  - docker run -d -p 127.0.0.1:80:80 --name zookeeper zookeeper
-
+  - bash ./travis-ci/docker_build.sh
+ 
 script:
-  - docker ps | grep -q zookeeper
+  - bash ./travis-ci/docker_test.sh
+
+env:
+  global:
+    - CI_IMAGE_NAME=zookeeper
+    - CI_SO=alpine
+    - CI_DOCKER_USER=gibdbigdata
+    - secure: "oFD/tic8JAwpMXuMDBZXV4ot6w1NLWvHQnrDKmUHSMQJC1cbbrR1p5q8XayfjtmdqQdFQmIfM6YHEKeHw//ypgObWjYS8q00OaaMDXPTdmgr1Ee4nhgkkDihT+kVij0rn96W/QvyAVoaV5hJoyUr3Nhk+mnHEYm3M+Q3LAQglRg="
+  matrix:
+    - CI_SO_VER=3.4 CI_JAVA_MAJOR=8  CI_JAVA_MINOR=112  CI_JAVA_BUILD=15  CI_PY_VER=2.7 CI_PY_BUILD=12-r0  CI_PIP_VER=8.1.2-r0 CI_ZOOK_VER=3.4.6 
+    - CI_SO_VER=3.4 CI_JAVA_MAJOR=8  CI_JAVA_MINOR=112  CI_JAVA_BUILD=15  CI_PY_VER=2.7 CI_PY_BUILD=12-r0  CI_PIP_VER=8.1.2-r0 CI_ZOOK_VER=3.4.9
+
 
 notifications:
   slack: frcubigdata:UHa7tsq87e6C0xd0C8es5CQO
+
+branches:
+  only:
+    - master
